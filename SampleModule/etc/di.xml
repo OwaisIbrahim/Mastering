@@ -18,4 +18,5 @@
             </argument>
         </arguments>
     </virtualType>
+    <preference for="Magento\Framework\Logger\Handler\Debug" type="Mastering\SampleModule\Model\DebugHandler"/>
 </config>

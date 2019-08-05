@@ -9,6 +9,8 @@ use Psr\Log\LoggerInterface as Logger;
 
 class GridCollection extends \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult
 {
+    private $logger;
+
     public function __construct(
         EntityFactory $entityFactory,
         Logger $logger,
@@ -17,6 +19,7 @@ class GridCollection extends \Magento\Framework\View\Element\UiComponent\DataPro
         $mainTable = 'mastering_sample_item',
         $resourceModel = 'Mastering\SampleModule\Model\ResourceModel\Item'
     ) {
+        $this->logger = $logger;
         parent::__construct(
             $entityFactory,
             $logger,
@@ -25,5 +28,6 @@ class GridCollection extends \Magento\Framework\View\Element\UiComponent\DataPro
             $mainTable,
             $resourceModel
         );
+        $this->logger->debug('ITEM ADDED');
     }
 }

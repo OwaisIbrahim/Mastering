@@ -9,3 +9,8 @@ A)
     4) Update UpgradeSchema.php as new column was added database name same as ui_component i.e sales_order_grid
     5) Add column on core file via di.xml adding virtualType='Magento/../Order/Grid'
     6) Update module.xml and modified module name there i.e Module_Sales
+
+- Templates for rendering UiComponent are place under frontend/web/template 
+- This code snippet tells to replace the refrence from the folling path
+ - <preference for="Magento\Framework\Logger\Handler\Debug" type="Mastering\SampleModule\Model\DebugHandler">
+- 
