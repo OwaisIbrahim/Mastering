@@ -23,6 +23,17 @@
                 );
             }
 
+            if( version_compare( $context->getVersion(), '1.0.2', '<' ) ) {
+                $setup->getConnection()->addColumn(
+                    $setup->getTable('sales_order_grid'),
+                    'base_tax_amount',
+                    [
+                        'type' => Table::TYPE_DECIMAL,
+                        'comment' => 'Base Tax Ammount'
+                    ]
+                );
+            }
+
             
             $setup->endSetup();
         }

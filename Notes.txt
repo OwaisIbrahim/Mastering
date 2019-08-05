@@ -1,0 +1,11 @@
+3.4) EXTENDING UI COMPONENT
+Q) Update Date Column in Sales Order Grid and add base_tax column in it.
+A)
+    1) Look the url eg: localhost/magento2/admin/sales/order SAME AS localhost/magento2/admin/sales/order/index  
+    2) Visit folder module-sales/view/adminhtml/layout/sales_order_index 
+        2.1) Look ui_component name='sales_order_grid' - Search in ui_component FOLDER
+    3) In sales_order_grid look for //** <column name='..' **// specific modify field eg: dataFormat
+        3.1) Add base_tax_column
+    4) Update UpgradeSchema.php as new column was added database name same as ui_component i.e sales_order_grid
+    5) Add column on core file via di.xml adding virtualType='Magento/../Order/Grid'
+    6) Update module.xml and modified module name there i.e Module_Sales
